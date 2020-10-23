@@ -34,6 +34,7 @@ public class TelaInicial extends javax.swing.JFrame {
         menuItemeClintesCadastrar = new javax.swing.JMenuItem();
         MenuItemClienteListar = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        menuItemProdutosGerenciar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1024, 768));
@@ -75,6 +76,15 @@ public class TelaInicial extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Produtos");
+
+        menuItemProdutosGerenciar.setText("Gerenciar ...");
+        menuItemProdutosGerenciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemProdutosGerenciarActionPerformed(evt);
+            }
+        });
+        jMenu3.add(menuItemProdutosGerenciar);
+
         jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
@@ -105,6 +115,14 @@ public class TelaInicial extends javax.swing.JFrame {
        
     }//GEN-LAST:event_MenuItemClienteListarActionPerformed
 
+    private void menuItemProdutosGerenciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemProdutosGerenciarActionPerformed
+       
+       FormProdutos tela = new FormProdutos();
+       jdpPainel.add( tela );
+       tela.setVisible( true );
+        
+    }//GEN-LAST:event_menuItemProdutosGerenciarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -117,6 +135,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JDesktopPane jdpPainel;
+    private javax.swing.JMenuItem menuItemProdutosGerenciar;
     private javax.swing.JMenuItem menuItemeClintesCadastrar;
     // End of variables declaration//GEN-END:variables
 }
