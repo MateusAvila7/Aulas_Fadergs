@@ -189,7 +189,8 @@ public class FormClientes extends javax.swing.JInternalFrame {
             cliente.telefone = fone;
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
-
+        
+    //capo de maracar e endentificara o que o usuario escrevel
     private void verificarTipoPessoa(){
         if( rbPF.isSelected() ){ //Pegando Oque o usuaria escrevel (isSelected)
             

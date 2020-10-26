@@ -138,7 +138,7 @@ public class FormProdutos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        
+        //obiservar se o usuario prencheu todos os campos certos 
         String nome = txtNome.getText();
         if( nome.isEmpty() || cmbCategoria.getSelectedIndex() == 0){
             JOptionPane.showMessageDialog(null," O nome e a categoria são obrigatorios");
@@ -150,6 +150,7 @@ public class FormProdutos extends javax.swing.JInternalFrame {
             
             carregarTabela();
             
+            //limpara al clicar no botom de salvar
             txtNome.setText("");
             cmbCategoria.setSelectedIndex(0);
         }
