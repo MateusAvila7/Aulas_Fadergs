@@ -69,12 +69,13 @@ public class FormProdutos extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
         setTitle("Gerenciar Produtos ");
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(600, 800));
 
         jLabel1.setText("Nome do produto: ");
 
         jLabel2.setText("Categoria:");
 
+        cmbCategoria.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cmbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione....", "Alimentos", "Bebidas", "eletrônicos", " " }));
 
         btnSalvar.setText("Salvar");
