@@ -27,16 +27,28 @@ public class Tela_Inicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jdpPainel = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        MenuItemCFuncionario = new javax.swing.JMenuItem();
+        MenuItemCCaminhao = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        MenuItemLFuncionario = new javax.swing.JMenuItem();
+        MenuItemLCaminhao = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout jdpPainelLayout = new javax.swing.GroupLayout(jdpPainel);
+        jdpPainel.setLayout(jdpPainelLayout);
+        jdpPainelLayout.setHorizontalGroup(
+            jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 629, Short.MAX_VALUE)
+        );
+        jdpPainelLayout.setVerticalGroup(
+            jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 453, Short.MAX_VALUE)
+        );
 
         jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
@@ -47,29 +59,34 @@ public class Tela_Inicial extends javax.swing.JFrame {
         jMenu2.setText("Cadastrar");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jMenuItem1.setText("Cadastrar funcionário");
-        jMenu2.add(jMenuItem1);
-
-        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jMenuItem2.setText("Cadastrar caminhão ");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        MenuItemCFuncionario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        MenuItemCFuncionario.setText("Cadastrar funcionário");
+        MenuItemCFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                MenuItemCFuncionarioActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        jMenu2.add(MenuItemCFuncionario);
+
+        MenuItemCCaminhao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        MenuItemCCaminhao.setText("Cadastrar caminhão ");
+        MenuItemCCaminhao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemCCaminhaoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(MenuItemCCaminhao);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Informações");
         jMenu3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jMenuItem3.setText("Listar funcionário ");
-        jMenu3.add(jMenuItem3);
+        MenuItemLFuncionario.setText("Listar funcionário ");
+        jMenu3.add(MenuItemLFuncionario);
 
-        jMenuItem4.setText("Listar caminhão ");
-        jMenu3.add(jMenuItem4);
+        MenuItemLCaminhao.setText("Listar caminhão ");
+        jMenu3.add(MenuItemLCaminhao);
 
         jMenuBar1.add(jMenu3);
 
@@ -79,19 +96,31 @@ public class Tela_Inicial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 492, Short.MAX_VALUE)
+            .addComponent(jdpPainel)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 355, Short.MAX_VALUE)
+            .addComponent(jdpPainel)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void MenuItemCCaminhaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemCCaminhaoActionPerformed
+        
+        CadastroCaminhao tela = new CadastroCaminhao();
+        jdpPainel.add( tela );
+        tela.setVisible( true );
+        
+    }//GEN-LAST:event_MenuItemCCaminhaoActionPerformed
+
+    private void MenuItemCFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemCFuncionarioActionPerformed
+     
+        CadastraFuncionario tela = new CadastraFuncionario();
+        jdpPainel.add( tela );
+        tela.setVisible( true );
+        
+    }//GEN-LAST:event_MenuItemCFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -99,13 +128,14 @@ public class Tela_Inicial extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem MenuItemCCaminhao;
+    private javax.swing.JMenuItem MenuItemCFuncionario;
+    private javax.swing.JMenuItem MenuItemLCaminhao;
+    private javax.swing.JMenuItem MenuItemLFuncionario;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JDesktopPane jdpPainel;
     // End of variables declaration//GEN-END:variables
 }
