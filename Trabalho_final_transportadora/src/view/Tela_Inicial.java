@@ -83,9 +83,19 @@ public class Tela_Inicial extends javax.swing.JFrame {
         jMenu3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         MenuItemLFuncionario.setText("Listar funcionário ");
+        MenuItemLFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemLFuncionarioActionPerformed(evt);
+            }
+        });
         jMenu3.add(MenuItemLFuncionario);
 
         MenuItemLCaminhao.setText("Listar caminhão ");
+        MenuItemLCaminhao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemLCaminhaoActionPerformed(evt);
+            }
+        });
         jMenu3.add(MenuItemLCaminhao);
 
         jMenuBar1.add(jMenu3);
@@ -121,6 +131,21 @@ public class Tela_Inicial extends javax.swing.JFrame {
         tela.setVisible( true );
         
     }//GEN-LAST:event_MenuItemCFuncionarioActionPerformed
+
+    private void MenuItemLFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemLFuncionarioActionPerformed
+        
+        ListarFuncionario tela = new ListarFuncionario();
+        jdpPainel.add( tela );
+        tela.setVisible( true );
+    }//GEN-LAST:event_MenuItemLFuncionarioActionPerformed
+
+    private void MenuItemLCaminhaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemLCaminhaoActionPerformed
+       
+        ListarCaminhao tela = new ListarCaminhao();
+        jdpPainel.add( tela );
+        tela.setVisible( true );
+        
+    }//GEN-LAST:event_MenuItemLCaminhaoActionPerformed
 
     /**
      * @param args the command line arguments

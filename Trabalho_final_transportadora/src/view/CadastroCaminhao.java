@@ -5,6 +5,8 @@
  */
 package view;
 
+import model.Caminhao;
+
 /**
  *
  * @author Mateus
@@ -55,9 +57,14 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
 
         btnSalvar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         try {
-            txtPlaca.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###-####")));
+            txtPlaca.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("***-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -107,6 +114,23 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+       
+        String marca = txtMarca.getText();
+        String placa = txtPlaca.getText();
+        String codigo = txtCodigo.getText();
+        
+        Caminhao c = new Caminhao();
+        c.marca = marca;
+        c.placa = placa;
+        c.codigo = codigo;
+        
+        txtMarca.setText("");
+        txtCodigo.setText("");
+        txtPlaca.setText("");
+        
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

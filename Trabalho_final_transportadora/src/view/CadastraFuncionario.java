@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.JOptionPane;
+import model.Funcionario;
 
 /**
  *
@@ -173,7 +174,18 @@ public class CadastraFuncionario extends javax.swing.JInternalFrame {
         String rg = txtRG.getText();
         String cpf = txtCPF.getText();
         
-       
+        Funcionario f = new Funcionario();
+        f.nome = nome;
+        f.telefone = telefone;
+        f.Email = email;
+        f.cpf = cpf;
+        f.rg = rg;
+        
+        txtNome.setText("");
+        txtTelefne.setText("");
+        txtEMAIL.setText("");
+        txtRG.setText("");
+        txtCPF.setText("");
         
     }//GEN-LAST:event_btnSalvarActionPerformed
 
