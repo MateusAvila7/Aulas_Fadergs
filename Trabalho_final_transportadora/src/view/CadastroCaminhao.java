@@ -5,6 +5,9 @@
  */
 package view;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 import model.Caminhao;
 
 /**
@@ -16,8 +19,30 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
     /**
      * Creates new form CadastroCaminhao
      */
+    
+    List<Caminhao> listadeCaminhao;
     public CadastroCaminhao() {
         initComponents();
+        
+        listadeCaminhao = new ArrayList<Caminhao>();
+        
+        carregarTabela();
+        
+    }
+    
+    private void carregarTabela(){
+        String[] colunas = {"Marca", "Placa","codigo"};
+        
+        
+         DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.setColumnIdentifiers( colunas );
+        
+        for( Caminhao c : listadeCaminhao){
+            Object[] linha = {c.marca, c.placa,c.codigo};
+            tableModel.addRow( linha );
+        }
+         
+        tabelaCaminhao.setModel( tableModel );
     }
 
     /**
@@ -36,6 +61,8 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
         txtCodigo = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
         txtPlaca = new javax.swing.JFormattedTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaCaminhao = new javax.swing.JTable();
 
         setClosable(true);
         setIconifiable(true);
@@ -70,27 +97,47 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
         }
         txtPlaca.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
+        tabelaCaminhao.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tabelaCaminhao);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtMarca)
-                            .addComponent(txtPlaca, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
-                            .addComponent(txtCodigo)))
+                            .addComponent(txtPlaca, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(201, 201, 201)
-                        .addComponent(btnSalvar)))
-                .addContainerGap(131, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCodigo)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(86, 86, 86)
+                                .addComponent(btnSalvar)))
+                        .addGap(567, 567, 567))))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,7 +156,9 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(93, 93, 93)
                 .addComponent(btnSalvar)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -126,6 +175,11 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
         c.placa = placa;
         c.codigo = codigo;
         
+        
+        listadeCaminhao.add(c);
+        
+        carregarTabela();
+        
         txtMarca.setText("");
         txtCodigo.setText("");
         txtPlaca.setText("");
@@ -138,6 +192,8 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tabelaCaminhao;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtMarca;
     private javax.swing.JFormattedTextField txtPlaca;

@@ -43,11 +43,11 @@ public class Tela_Inicial extends javax.swing.JFrame {
         jdpPainel.setLayout(jdpPainelLayout);
         jdpPainelLayout.setHorizontalGroup(
             jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 629, Short.MAX_VALUE)
+            .addGap(0, 859, Short.MAX_VALUE)
         );
         jdpPainelLayout.setVerticalGroup(
             jdpPainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 453, Short.MAX_VALUE)
+            .addGap(0, 514, Short.MAX_VALUE)
         );
 
         jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -133,18 +133,11 @@ public class Tela_Inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuItemCFuncionarioActionPerformed
 
     private void MenuItemLFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemLFuncionarioActionPerformed
-        
-        ListarFuncionario tela = new ListarFuncionario();
-        jdpPainel.add( tela );
-        tela.setVisible( true );
+
     }//GEN-LAST:event_MenuItemLFuncionarioActionPerformed
 
     private void MenuItemLCaminhaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemLCaminhaoActionPerformed
-       
-        ListarCaminhao tela = new ListarCaminhao();
-        jdpPainel.add( tela );
-        tela.setVisible( true );
-        
+ 
     }//GEN-LAST:event_MenuItemLCaminhaoActionPerformed
 
     /**
