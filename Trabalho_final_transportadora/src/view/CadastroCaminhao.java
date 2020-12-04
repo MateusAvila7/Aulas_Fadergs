@@ -8,7 +8,7 @@ package view;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import model.Caminhao;
+import model.Veiculos;
 
 /**
  *
@@ -20,11 +20,11 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
      * Creates new form CadastroCaminhao
      */
     
-    List<Caminhao> listadeCaminhao;
+    List<Veiculos> listadeCaminhao;
     public CadastroCaminhao() {
         initComponents();
         
-        listadeCaminhao = new ArrayList<Caminhao>();
+        listadeCaminhao = new ArrayList<Veiculos>();
         
         carregarTabela();
         
@@ -37,7 +37,7 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
          DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers( colunas );
         
-        for( Caminhao c : listadeCaminhao){
+        for( Veiculos c : listadeCaminhao){
             Object[] linha = {c.marca, c.placa,c.codigo};
             tableModel.addRow( linha );
         }
@@ -68,6 +68,7 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        setTitle("Cadastro de camknhão ");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Marca:");
@@ -78,7 +79,7 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
         jLabel2.setText("Placa:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Godigo:");
+        jLabel3.setText("Gódigo:");
 
         txtCodigo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -170,7 +171,7 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
         String placa = txtPlaca.getText();
         String codigo = txtCodigo.getText();
         
-        Caminhao c = new Caminhao();
+        Veiculos c = new Veiculos();
         c.marca = marca;
         c.placa = placa;
         c.codigo = codigo;

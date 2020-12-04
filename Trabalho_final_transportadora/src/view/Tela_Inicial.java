@@ -33,9 +33,7 @@ public class Tela_Inicial extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         MenuItemCFuncionario = new javax.swing.JMenuItem();
         MenuItemCCaminhao = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        MenuItemLFuncionario = new javax.swing.JMenuItem();
-        MenuItemLCaminhao = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,28 +75,15 @@ public class Tela_Inicial extends javax.swing.JFrame {
         });
         jMenu2.add(MenuItemCCaminhao);
 
+        jMenuItem1.setText("Cadstra carro");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
         jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Informações");
-        jMenu3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        MenuItemLFuncionario.setText("Listar funcionário ");
-        MenuItemLFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuItemLFuncionarioActionPerformed(evt);
-            }
-        });
-        jMenu3.add(MenuItemLFuncionario);
-
-        MenuItemLCaminhao.setText("Listar caminhão ");
-        MenuItemLCaminhao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuItemLCaminhaoActionPerformed(evt);
-            }
-        });
-        jMenu3.add(MenuItemLCaminhao);
-
-        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -132,13 +117,14 @@ public class Tela_Inicial extends javax.swing.JFrame {
         
     }//GEN-LAST:event_MenuItemCFuncionarioActionPerformed
 
-    private void MenuItemLFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemLFuncionarioActionPerformed
-
-    }//GEN-LAST:event_MenuItemLFuncionarioActionPerformed
-
-    private void MenuItemLCaminhaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemLCaminhaoActionPerformed
- 
-    }//GEN-LAST:event_MenuItemLCaminhaoActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        
+        CadastroCarro tela = new CadastroCarro();
+        jdpPainel.add( tela );
+        tela.setVisible( true );
+        
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,12 +134,10 @@ public class Tela_Inicial extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MenuItemCCaminhao;
     private javax.swing.JMenuItem MenuItemCFuncionario;
-    private javax.swing.JMenuItem MenuItemLCaminhao;
-    private javax.swing.JMenuItem MenuItemLFuncionario;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JDesktopPane jdpPainel;
     // End of variables declaration//GEN-END:variables
 }

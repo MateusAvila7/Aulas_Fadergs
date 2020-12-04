@@ -5,10 +5,8 @@ package model;
  *
  * @author Mateus
  */
-public class Caminhao {
+public class Caminhao  extends Veiculos{
     
-    public String marca;
-    public String placa;
-    public String codigo;
+    public String eixo;
     
 }
