@@ -5,45 +5,23 @@
  */
 package view;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import javafx.scene.Camera;
 import javax.swing.table.DefaultTableModel;
-import model.Veiculos;
+import model.Caminhao;
+
 
 /**
  *
  * @author Mateus
  */
-public class CadastroCaminhao extends javax.swing.JInternalFrame {
+public class CCaminhao extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form CadastroCaminhao
      */
     
-    List<Veiculos> listadeCaminhao;
-    public CadastroCaminhao() {
-        initComponents();
-        
-        listadeCaminhao = new ArrayList<Veiculos>();
-        
-        carregarTabela();
-        
-    }
-    
-    private void carregarTabela(){
-        String[] colunas = {"Marca", "Placa","codigo"};
-        
-        
-         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel.setColumnIdentifiers( colunas );
-        
-        for( Veiculos c : listadeCaminhao){
-            Object[] linha = {c.marca, c.placa,c.codigo};
-            tableModel.addRow( linha );
-        }
-         
-        tabelaCaminhao.setModel( tableModel );
-    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,21 +32,34 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtPlaca = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
         txtMarca = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
-        txtPlaca = new javax.swing.JFormattedTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaCaminhao = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        txtEixo = new javax.swing.JTextField();
+        txtPlaca1 = new javax.swing.JFormattedTextField();
+
+        try {
+            txtPlaca.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("***-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtPlaca.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPlaca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPlacaActionPerformed(evt);
+            }
+        });
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Cadastro de camknhão ");
+        setTitle("Cadastro de caminhão ");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Marca:");
@@ -79,7 +70,7 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
         jLabel2.setText("Placa:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Gódigo:");
+        jLabel3.setText("Código:");
 
         txtCodigo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -91,25 +82,22 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setText("Eixo:");
+
+        txtEixo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
         try {
-            txtPlaca.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("***-####")));
+            txtPlaca1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("***-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtPlaca.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        tabelaCaminhao.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        txtPlaca1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPlaca1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPlaca1ActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(tabelaCaminhao);
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,27 +106,29 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtMarca)
-                            .addComponent(txtPlaca, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel3)
+                        .addGap(33, 33, 33)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodigo)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4))
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 86, Short.MAX_VALUE)
+                                .addComponent(btnSalvar)
+                                .addGap(567, 567, 567))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(86, 86, 86)
-                                .addComponent(btnSalvar)))
-                        .addGap(567, 567, 567))))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtPlaca1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtMarca, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                                        .addComponent(txtEixo)))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,19 +137,21 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
-                    .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                    .addComponent(txtPlaca1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtEixo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(93, 93, 93)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addComponent(btnSalvar)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(65, 65, 65))
         );
 
         pack();
@@ -170,22 +162,28 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
         String marca = txtMarca.getText();
         String placa = txtPlaca.getText();
         String codigo = txtCodigo.getText();
+        String eixo = txtEixo.getText();
         
-        Veiculos c = new Veiculos();
+        Caminhao c = new Caminhao();
+        c.eixo = eixo;
         c.marca = marca;
         c.placa = placa;
         c.codigo = codigo;
         
-        
-        listadeCaminhao.add(c);
-        
-        carregarTabela();
-        
+        txtEixo.setText("");
         txtMarca.setText("");
         txtCodigo.setText("");
         txtPlaca.setText("");
         
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void txtPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPlacaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPlacaActionPerformed
+
+    private void txtPlaca1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPlaca1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPlaca1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -193,10 +191,11 @@ public class CadastroCaminhao extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabelaCaminhao;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtEixo;
     private javax.swing.JTextField txtMarca;
     private javax.swing.JFormattedTextField txtPlaca;
+    private javax.swing.JFormattedTextField txtPlaca1;
     // End of variables declaration//GEN-END:variables
 }

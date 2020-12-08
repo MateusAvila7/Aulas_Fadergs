@@ -32,8 +32,8 @@ public class Tela_Inicial extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         MenuItemCFuncionario = new javax.swing.JMenuItem();
-        MenuItemCCaminhao = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
+        MenuItemCCaminhao = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,15 +66,6 @@ public class Tela_Inicial extends javax.swing.JFrame {
         });
         jMenu2.add(MenuItemCFuncionario);
 
-        MenuItemCCaminhao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        MenuItemCCaminhao.setText("Cadastrar caminhão ");
-        MenuItemCCaminhao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuItemCCaminhaoActionPerformed(evt);
-            }
-        });
-        jMenu2.add(MenuItemCCaminhao);
-
         jMenuItem1.setText("Cadstra carro");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +73,14 @@ public class Tela_Inicial extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem1);
+
+        MenuItemCCaminhao.setText("Cadstro de caminhão ");
+        MenuItemCCaminhao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemCCaminhaoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(MenuItemCCaminhao);
 
         jMenuBar1.add(jMenu2);
 
@@ -101,14 +100,6 @@ public class Tela_Inicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MenuItemCCaminhaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemCCaminhaoActionPerformed
-        
-        CadastroCaminhao tela = new CadastroCaminhao();
-        jdpPainel.add( tela );
-        tela.setVisible( true );
-        
-    }//GEN-LAST:event_MenuItemCCaminhaoActionPerformed
-
     private void MenuItemCFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemCFuncionarioActionPerformed
      
         CadastraFuncionario tela = new CadastraFuncionario();
@@ -125,6 +116,14 @@ public class Tela_Inicial extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void MenuItemCCaminhaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemCCaminhaoActionPerformed
+           
+        CCaminhao tela = new CCaminhao();
+        jdpPainel.add( tela );
+       tela.setVisible( true );
+        
+    }//GEN-LAST:event_MenuItemCCaminhaoActionPerformed
 
     /**
      * @param args the command line arguments
