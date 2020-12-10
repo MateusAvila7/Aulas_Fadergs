@@ -38,7 +38,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadstra carro"/>
+                <Property name="text" type="java.lang.String" value="Cadastro carro"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
@@ -46,7 +46,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="MenuItemCCaminhao">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadstro de caminh&#xe3;o "/>
+                <Property name="text" type="java.lang.String" value="Cadastro de caminh&#xe3;o "/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemCCaminhaoActionPerformed"/>

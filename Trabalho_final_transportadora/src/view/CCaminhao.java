@@ -21,7 +21,9 @@ public class CCaminhao extends javax.swing.JInternalFrame {
      * Creates new form CadastroCaminhao
      */
     
-   
+   public CCaminhao (){
+       initComponents();
+   }
 
     /**
      * This method is called from within the constructor to initialize the form.

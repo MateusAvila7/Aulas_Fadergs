@@ -66,7 +66,7 @@ public class Tela_Inicial extends javax.swing.JFrame {
         });
         jMenu2.add(MenuItemCFuncionario);
 
-        jMenuItem1.setText("Cadstra carro");
+        jMenuItem1.setText("Cadastro carro");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -74,7 +74,7 @@ public class Tela_Inicial extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem1);
 
-        MenuItemCCaminhao.setText("Cadstro de caminhão ");
+        MenuItemCCaminhao.setText("Cadastro de caminhão ");
         MenuItemCCaminhao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuItemCCaminhaoActionPerformed(evt);
